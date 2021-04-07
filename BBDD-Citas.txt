@@ -1,0 +1,27 @@
+
+BBDD : 
+
+- Tb Usuarios (DNI, Nombre, Apellido, Telefono, Historial, Rol)
+- Tb Dentistas (Nº Empleado, Nombre, Apellido, Especialidad, Telefono, Horario)
+- Tb Citas (IDUsuario + Nombre, IDDentista + Nombre, FechaHoraCita, Estado [programada, cancelada, finalizada], DetalleCita (corresponde con la cita ultima cita del usuario));
+
+
+Funciones Server: 
+- Listado Usuarios
+- Registro Usuarios
+- LogIn / LogOut Usuario
+- Listado Citas Programadas
+- Crear Citas (Post)
+- Cambiar estado Cita (Cancelada)
+- Cambiar estado Cita (Finalizada)
+
+Controladores: 
+- Usuarios
+- Citas
+- Dentistas
+
+Rutas: 
+
+- Usuarios: all CRUD (no Delete)
+- Cita : all CRUD (no Delete)
+- Dentistas : only CREATE & READ (rol: admin) || only Read (rol: user)
