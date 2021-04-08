@@ -17,7 +17,7 @@ export class Dating extends Model {
 };
 Dating.init({
     date: DataTypes.DATE,
-    userID: DataTypes.INTEGER,
+    userID: DataTypes.STRING,
     doctorID: DataTypes.INTEGER,
     status: DataTypes.STRING,
     detail: DataTypes.STRING
