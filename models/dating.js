@@ -22,6 +22,6 @@ Dating.init({
     status: DataTypes.STRING,
     detail: DataTypes.STRING
 }, {
-    sequelize,
+    sequelize: database,
     modelName: 'Dating',
 });
