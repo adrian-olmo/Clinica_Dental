@@ -15,6 +15,12 @@ module.exports = {
             speciality: 'Implantes Dentales',
             phone: '722-29-85-50',
             schedule: 'Lunes - Sabados (tardes)'
+        }, {
+            name: 'Marcos',
+            lastname: 'Sobrino',
+            speciality: 'Limbieza y Blanqueamiento',
+            phone: '632-25-80-17',
+            schedule: 'Lunes - Sabados (mañanas y tardes)'
         }], {})
 
     },

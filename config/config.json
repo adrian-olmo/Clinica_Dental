@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "C@nD@d0",
+        "password": "",
         "database": "db_clinica",
         "host": "127.0.0.1",
         "dialect": "mysql"
