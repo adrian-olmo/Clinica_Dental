@@ -19,7 +19,7 @@ Doctors.init({
     name: DataTypes.STRING,
     lastname: DataTypes.STRING,
     speciality: DataTypes.STRING,
-    phone: DataTypes.INTEGER,
+    phone: DataTypes.STRING,
     schedule: DataTypes.STRING
 }, {
     sequelize,
