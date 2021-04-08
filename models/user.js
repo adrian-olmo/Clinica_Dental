@@ -18,9 +18,11 @@ export class User extends Model {
 User.init({
     name: DataTypes.STRING,
     lastname: DataTypes.STRING,
-    speciality: DataTypes.STRING,
-    phone: DataTypes.INTEGER,
-    schedule: DataTypes.STRING
+    phone: DataTypes.STRING,
+    history: DataTypes.STRING,
+    role: DataTypes.STRING,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
 }, {
     sequelize: database,
     modelName: 'User',
