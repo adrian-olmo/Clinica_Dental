@@ -5,16 +5,8 @@ import database from "../database.js";
 
 const { Model, DataTypes } = pkg;
 
-export class Dating extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-        // define association here
-    }
-};
+export class Dating extends Model {};
+
 Dating.init({
     date: DataTypes.DATE,
     userID: DataTypes.STRING,
