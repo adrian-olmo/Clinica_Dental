@@ -1,13 +1,6 @@
 import jwt from "jsonwebtoken";
-import database from "../database.js";
 import { User } from "../models/user.js";
 
-/* 
-const role = req.headers.role;
-
-        database.query(`SELECT * FROM users WHERE role = '${role}' `, { type: database.QueryTypes.SELECT }).then(users => {
-            res.send(users)
-        }); */
 
 export const authController = {
     authentication: async(req, res) => {
@@ -15,26 +8,27 @@ export const authController = {
         try {
 
             const data = { role: req.headers.role };
-            let checkRole = await User.findOne({ where: { role: data.role } })
+            let checkRole = await User.findOne({ attributes: ['role'], where: { role: data.role } })
 
-            if (checkRole.role == data.role) {
+            if (checkRole.role == data.role && data.role == 'administrador') {
 
                 const payload = {
                     role: req.headers.role
                 }
-                const token = jwt.sign(payload, process.env.SECRET)
-                res.json({ auth: token });
+                const auth = jwt.sign(payload, process.env.TOKEN)
+                res.json({ auth: auth });
 
 
             } else {
-                res.sendStatus(404)
+                res.sendStatus(401)
             }
 
-
-
         } catch (error) {
-
+            res.status(401);
         }
 
+
+
     }
+
 }

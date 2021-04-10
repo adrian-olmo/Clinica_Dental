@@ -9,5 +9,15 @@ export const doctorController = {
         } catch (error) {
             console.log(error);
         }
+    },
+
+    create: async(req, res) => {
+        try {
+            let respuesta = await Doctors.create(req.body);
+            res.send(respuesta)
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(404)
+        }
     }
 }
