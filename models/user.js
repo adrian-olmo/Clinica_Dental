@@ -1,7 +1,7 @@
 'use strict';
 import pkg from "sequelize";
 import database from "../database.js";
-import dating from "./dating.js";
+import { Dating } from "./dating.js";
 
 const { Model, DataTypes } = pkg;
 
@@ -28,4 +28,4 @@ User.init({
     modelName: 'User',
 });
 
-User.hasMany(dating, { foreignKey: 'userID' });
+User.hasMany(Dating, { foreignKey: 'userID' });
