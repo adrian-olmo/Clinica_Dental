@@ -23,11 +23,27 @@ export const datingController = {
     },
 
     create: async(req, res) => {
-        let respuesta = await Dating.create(req.body);
+        await Dating.create(req.body);
         res.send('Cita creada con exito');
     },
 
-    update: async(req, res) => {
+    updatePro: async(req, res) => {
+
+        const id = req.body.id;
+        const status = req.body.status;
+
+        try {
+            database.query(`UPDATE datings SET status = "${status}" WHERE datings.id = "${id}"`).then(dating => {
+                res.send(dating)
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    updateFin: async(req, res) => {
 
     }
+
+
 }
