@@ -5,19 +5,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-/* 
-const role = req.headers.role;
-
-        database.query(`SELECT * FROM users WHERE role = '${role}' `, { type: database.QueryTypes.SELECT }).then(users => {
-            res.send(users)
-        }); */
 
 export const authController = {
     authentication: async(req, res) => {
 
         try {
             const data = { role: req.headers.role };
-            let checkRole = await User.findOne({attributes: ["role"], where: { role: data.role } })
+            let checkRole = await User.findOne({ attributes: ["role"], where: { role: data.role } })
 
             if (checkRole.role == data.role) {
 
