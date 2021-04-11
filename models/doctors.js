@@ -17,5 +17,3 @@ Doctors.init({
     sequelize: database,
     modelName: 'Doctors',
 });
-
-Doctors.hasMany(Dating, { foreignKey: 'doctorID' });

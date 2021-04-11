@@ -1,4 +1,6 @@
 import express from 'express';
+import dotenv from "dotenv";
+
 
 //Routes
 import datingRoutes from './routes/datings.routes.js';
@@ -12,6 +14,7 @@ import checkJwt from "./middleware/checkJwt.js";
 
 const app = express();
 app.use(express.json());
+dotenv.config();
 
 app.use('/auth', authRoutes)
 app.use('/users', userRoutes);
