@@ -20,5 +20,3 @@ User.init({
     sequelize: database,
     modelName: 'User',
 });
-
-User.hasMany(Dating, { foreignKey: 'userID' });
