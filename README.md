@@ -25,4 +25,29 @@ Gestión de una Clínica Dental manejada mediante una base de datos **SQL** y qu
   - Un endpoint controlado con una llave secreta que permite ver el listado completo de los doctores disponibles dentro de la clinica
   - Funcionamiento y Llave: 
     - `/doctors` : Tras verificar si la clave de autenticación es la correcta se mostrarán a todos los dentistas de la clinica y todos sus datos.
-    -  Ejemplo :key: `{"auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTYxODE1NjE2MH0"}`
+    -  Intento de insertar imagen dentro de la carpeta img
+
+### Datings 📆
+  
+  - Un endpoint que controla todas las acciones de las citas de la Clinica
+  - Funcionamiento y Llave: 
+    - `/datings` : Permite listar todas las citas (método Get); Crear citas nuevas (método Post); Actualizar el estado de una cita mediante su ID y con el nuevo estado de la misma (método Patch)
+    - `/datings/pro`: Un endpoint que muestra el listado de todas aquellas citas que están pendientes de ser atendidas
+
+### Tools 🔧
+  
+  - **Node.js**: Entorno de ejecución de JavaScript
+  - **Express**: Framework Backend de node.js
+  - **Dotenv**: Gestión de variables de entorno
+  - **Sequelize**: ORM que permite interactuar con SQL
+  - **Postman**: Software para realizar las peticiones
+  - **GitHub**: Control de versiones 
+
+### Control de Versiones
+  
+  - Utilizando la herramienta de GitHub y GitHub Desktop, se ha podido controlar, corregir y verificar los cambios realizados en el proceso de desarrollo de la aplicación
+  - Para evitar interferencias en las diferentes versiones de los miembros del proyecto, se dividió el repositorio en diferentes ramas:
+    - **main**: Rama con la aplicacion final.
+    - **Demo**: Rama con una versión beta donde se realizan las diferentes pruebas necesarias antes de lanzar la versión final
+    - **Adri y Gabo**: Ramas de los diferentes programadores
+  - Tras crear el entorno, los desarrolladores despliegan e implementan pequeñas funciones en sus respectivos entornos y posteriormente se juntan dentro de la rama **Demo** para probrar el conjunto de las funcionalidades y verificar que no hay conflictos en los archivos ni errores dentro del código.
