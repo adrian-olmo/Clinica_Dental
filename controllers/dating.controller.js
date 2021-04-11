@@ -1,5 +1,6 @@
 import database from "../database.js";
 import { Dating } from "../models/dating.js";
+import {User, Doctors} from "../models/index.js";
 
 
 export const datingController = {
