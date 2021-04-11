@@ -1,6 +1,7 @@
 import database from "../database.js";
 import { Dating } from "../models/dating.js";
-import { Dating, User, Doctors } from "./models/index.js";
+import {User, Doctors} from "../models/index.js";
+
 
 export const datingController = {
     list: async(req, res) => {
