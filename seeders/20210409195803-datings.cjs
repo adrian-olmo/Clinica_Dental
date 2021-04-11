@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-
     up: async(queryInterface, Sequelize) => {
         await queryInterface.bulkInsert('Doctors', [{
             date: '2021-04-11',
@@ -22,6 +21,7 @@ module.exports = {
             status: 'Cancelada',
             detail: 'Detalle'
         }], {})
+
     },
 
     down: async(queryInterface, Sequelize) => {
