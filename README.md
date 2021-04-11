@@ -54,6 +54,9 @@ Gestión de una Clínica Dental manejada mediante una base de datos **SQL** y qu
   - **Postman**: Software para realizar las peticiones
   ![image](https://user-images.githubusercontent.com/75450403/114313403-aa04b680-9af6-11eb-88e5-0fe7e0bfa0cb.png)
   - **GitHub**: Control de versiones 
+  ![image](https://user-images.githubusercontent.com/75450403/114313512-18497900-9af7-11eb-8855-0ce999d00fda.png)
+
+
 
 ### Control de Versiones
   
