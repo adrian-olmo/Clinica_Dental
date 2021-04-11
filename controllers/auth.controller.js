@@ -1,34 +1,31 @@
 import jwt from "jsonwebtoken";
+import database from "../database.js";
 import { User } from "../models/user.js";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 
 export const authController = {
     authentication: async(req, res) => {
 
         try {
-
             const data = { role: req.headers.role };
-            let checkRole = await User.findOne({ attributes: ['role'], where: { role: data.role } })
+            let checkRole = await User.findOne({ attributes: ["role"], where: { role: data.role } })
 
-            if (checkRole.role == data.role && data.role == 'administrador') {
+            if (checkRole.role == data.role) {
 
                 const payload = {
                     role: req.headers.role
                 }
-                const auth = jwt.sign(payload, process.env.TOKEN)
-                res.json({ auth: auth });
-
-
+                const token = jwt.sign(payload, process.env.SECRET)
+                res.json({ auth: token });
             } else {
-                res.sendStatus(401)
+                res.sendStatus(404)
             }
-
         } catch (error) {
-            res.status(401);
+            console.log(error)
         }
 
-
-
     }
-
 }
