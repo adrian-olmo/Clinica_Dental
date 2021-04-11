@@ -1,20 +1,12 @@
 'use strict';
 import pkg from "sequelize";
 import database from "../database.js";
-import dating from "./dating.js";
+import { Dating } from "./dating.js";
 
 const { Model, DataTypes } = pkg;
 
-export class Doctors extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-        // define association here
-    }
-};
+export class Doctors extends Model {};
+
 Doctors.init({
     name: DataTypes.STRING,
     lastname: DataTypes.STRING,
@@ -22,8 +14,6 @@ Doctors.init({
     phone: DataTypes.STRING,
     schedule: DataTypes.STRING
 }, {
-    sequelize,
+    sequelize: database,
     modelName: 'Doctors',
 });
-
-Doctors.hasMany(dating, { foreignKey: 'doctorID' });

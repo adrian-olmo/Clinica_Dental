@@ -12,15 +12,13 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             },
-
             userID: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.STRING,
                 references: {
                     model: 'users',
-                    key: 'id'
+                    key: 'dni'
                 }
             },
-
             doctorID: {
                 type: Sequelize.INTEGER,
                 references: {
@@ -28,7 +26,6 @@ module.exports = {
                     key: 'id'
                 }
             },
-
             status: {
                 allowNull: false,
                 type: Sequelize.STRING
