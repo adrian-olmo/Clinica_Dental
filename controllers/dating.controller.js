@@ -41,9 +41,4 @@ export const datingController = {
         }
     },
 
-    updateFin: async(req, res) => {
-
-    }
-
-
 }
