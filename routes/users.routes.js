@@ -8,5 +8,6 @@ userRoutes.get("/", userController.login);
 userRoutes.get("/profile", checkJwt, userController.profile);
 userRoutes.get("/logout", userController.logout);
 userRoutes.post("/", userController.create);
+userRoutes.get("/mydates", userController.mydates)
 
 export default userRoutes;

@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 import database from "../database.js";
 import { User } from "../models/user.js";
 import dotenv from 'dotenv';
+import { Dating } from "../models/dating.js";
 
 dotenv.config();
 
@@ -73,5 +74,12 @@ export const userController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    mydates: async (req, res) => {
+        const payload = jwt.decode(req.headers.auth, process.env.SECRET);
+
+        const allDates = await Dating.findAll({ where: { userId: payload.dni }})
+        if(allDates != !allDates) res.send(allDates);
+        else res.sendStatus(404)
     }
 }

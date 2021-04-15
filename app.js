@@ -21,6 +21,6 @@ app.use('/users', userRoutes);
 app.use('/datings', datingRoutes);
 app.use('/doctors', checkJwt, doctorRoutes);
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log("servidor conectado en el puerto 3000")
 });

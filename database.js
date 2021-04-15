@@ -1,7 +1,7 @@
 import sequelize from 'sequelize'
 
 const db = "db_clinica";
-const password = "";
+const password = "root1234";
 const username = "root";
 
 const database = new sequelize(db, username, password, {

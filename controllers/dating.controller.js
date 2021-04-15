@@ -1,6 +1,7 @@
 import database from "../database.js";
 import { Dating } from "../models/dating.js";
 
+
 export const datingController = {
     list: async(req, res) => {
         try {
@@ -39,6 +40,6 @@ export const datingController = {
         } catch (error) {
             console.log(error);
         }
-    },
+    }
 
 }

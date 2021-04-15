@@ -1,10 +1,11 @@
 import { Router } from 'express';
 import { datingController } from '../controllers/dating.controller.js';
+import adminAuth from '../middleware/adminauth.js';
 
 
 const datingRoutes = Router();
 
-datingRoutes.get('/', datingController.list);
+datingRoutes.get('/', adminAuth ,datingController.list);
 datingRoutes.get('/pro', datingController.listPro);
 datingRoutes.post('/', datingController.create);
 datingRoutes.patch('/', datingController.updatePro);
