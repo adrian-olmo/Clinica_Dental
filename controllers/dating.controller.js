@@ -6,7 +6,7 @@ import { Dating } from "../models/dating.js";
 export const datingController = {
     list: async (req, res) => {
         try {
-            database.query('SELECT datings.id AS id, datings.date AS date, users.dni AS userID, datings.detail AS detail, datings.`status` AS status FROM datings, users, doctors WHERE datings.userID = users.dni AND datings.doctorID = doctors.id', { type: database.QueryTypes.SELECT }).then(dating => {
+            database.query('SELECT datings.id AS id, datings.date AS date, users.dni AS userID, doctors.id AS doctorID, datings.detail AS detail, datings.`status` AS status FROM datings, users, doctors WHERE datings.userID = users.dni AND datings.doctorID = doctors.id', { type: database.QueryTypes.SELECT }).then(dating => {
                 res.json(dating)
             });
         } catch (error) {
@@ -39,7 +39,7 @@ export const datingController = {
                         userID: req.body.userID,
                         doctorID: req.body.doctorID,
                         status: "Programada",
-                        detail: "Detalle",
+                        detail: req.body.detail,
                         createdAt: fecha.toISOString().slice(0, 10),
                         updatedAt: fecha.toISOString().slice(0, 10)
                     }
