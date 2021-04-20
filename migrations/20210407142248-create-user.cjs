@@ -1,6 +1,6 @@
 'use strict';
 module.exports = {
-    up: async(queryInterface, Sequelize) => {
+    up: async (queryInterface, Sequelize) => {
         await queryInterface.createTable('Users', {
             dni: {
                 allowNull: false,
@@ -17,7 +17,7 @@ module.exports = {
             },
             phone: {
                 allowNull: false,
-                type: Sequelize.STRING
+                type: Sequelize.STRING,
             },
             history: {
                 allowNull: false,
@@ -35,7 +35,7 @@ module.exports = {
             }
         });
     },
-    down: async(queryInterface, Sequelize) => {
+    down: async (queryInterface, Sequelize) => {
         await queryInterface.dropTable('Users');
     }
 };
