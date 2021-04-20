@@ -42,7 +42,8 @@ export const userController = {
   },
   profile: async (req, res) => {
     try {
-      let respuesta = await User.findAll({
+      let verifyDni = jwt.decode(req.headers.auth, process.env.SECRET);
+      let respuesta = await User.findOne({
         attributes: [
           "dni",
           "name",
@@ -53,11 +54,11 @@ export const userController = {
           "createdAt",
           "updatedAt",
         ],
-        where: { dni: req.headers.dni },
+        where: { dni: verifyDni.dni },
       });
       if (!respuesta) {
-        res.send(
-          `no existe el dni ${req.headers.dni} en nuestra base de datos`
+        res.json(
+          { respuesta: `no existe el dni ${verifyDni.dni} en nuestra base de datos` }
         );
         return;
       }
@@ -73,7 +74,7 @@ export const userController = {
         where: { dni: req.body.dni },
       });
       if (usuario) {
-        res.send("el DNI del usuario ya existe en la base de datos");
+        res.json({ error: "el DNI del usuario ya existe en la base de datos" });
         return;
       }
       const fecha = new Date();
@@ -98,6 +99,7 @@ export const userController = {
       res.json({ respuesta: respuesta });
     } catch (error) {
       console.log(error);
+      res.json({ error: error })
     }
   },
   mydates: async (req, res) => {

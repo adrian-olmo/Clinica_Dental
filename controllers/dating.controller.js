@@ -6,7 +6,7 @@ import { Dating } from "../models/dating.js";
 export const datingController = {
     list: async (req, res) => {
         try {
-            database.query('SELECT datings.id AS NumCita, datings.date AS FechaCita, users.dni AS DNI, users.name AS Paciente, doctors.name AS Doctor, datings.detail AS DetalleCita, datings.`status` AS Estado FROM datings, users, doctors WHERE datings.userID = users.dni AND datings.doctorID = doctors.id', { type: database.QueryTypes.SELECT }).then(dating => {
+            database.query('SELECT datings.id AS id, datings.date AS date, users.dni AS userID, datings.detail AS detail, datings.`status` AS status FROM datings, users, doctors WHERE datings.userID = users.dni AND datings.doctorID = doctors.id', { type: database.QueryTypes.SELECT }).then(dating => {
                 res.json(dating)
             });
         } catch (error) {
