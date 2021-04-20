@@ -28,9 +28,9 @@ export const datingController = {
         try {
             const fecha = new Date();
             let respuesta = await database.query(`INSERT INTO datings 
-            (id, date, userID, doctorID, status, detail, createdAt, updatedAt) 
+            (date, userID, doctorID, status, detail, createdAt, updatedAt) 
             VALUES 
-            (:id, :date, :userID, :doctorID, :status, :detail, :createdAt, :updatedAt)`,
+            (:date, :userID, :doctorID, :status, :detail, :createdAt, :updatedAt)`,
 
                 {
                     replacements: {
@@ -46,7 +46,7 @@ export const datingController = {
                 }
 
             );
-            res.send('Cita creada con exito');
+            res.json({ respuesta: 'Cita creada con exito' });
         } catch (error) {
             console.log(error);
         }
