@@ -89,7 +89,7 @@ export const userController = {
             lastname: req.body.lastname,
             phone: req.body.phone,
             history: "vacio",
-            role: "usuario",
+            role: "user",
             createdAt: fecha.toISOString().slice(0, 10),
             updatedAt: fecha.toISOString().slice(0, 10),
           },

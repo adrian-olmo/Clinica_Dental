@@ -5,7 +5,7 @@ import adminAuth from '../middleware/adminauth.js';
 
 const datingRoutes = Router();
 
-datingRoutes.get('/', adminAuth ,datingController.list);
+datingRoutes.get('/', adminAuth, datingController.list);
 datingRoutes.get('/pro', datingController.listPro);
 datingRoutes.post('/', datingController.create);
 datingRoutes.patch('/', datingController.updatePro);
