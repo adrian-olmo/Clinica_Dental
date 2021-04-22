@@ -10,7 +10,7 @@ export const datingController = {
                 res.json(dating)
             });
         } catch (error) {
-            console.log(error);
+            console.log({ error: 'error al leer la cita' });
         }
     },
 
