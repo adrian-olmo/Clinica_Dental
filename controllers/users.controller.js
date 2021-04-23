@@ -62,7 +62,7 @@ export const userController = {
         );
         return;
       }
-      res.send(respuesta);
+      res.json({ respuesta: respuesta });
     } catch (error) {
       console.log(error);
     }
@@ -105,8 +105,8 @@ export const userController = {
   mydates: async (req, res) => {
     const payload = jwt.decode(req.headers.auth, process.env.SECRET);
 
-    const allDates = await Dating.findAll({ where: { userId: payload.dni } });
+    const allDates = await Dating.findAll({ where: { userId: payload.dni } })
     if (allDates != !allDates) res.json(allDates);
-    else res.sendStatus(404);
-  },
-};
+    else res.sendStatus(404)
+  }
+}
